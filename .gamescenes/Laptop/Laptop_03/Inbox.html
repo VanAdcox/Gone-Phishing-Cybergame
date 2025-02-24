@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - Webmail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .taskbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            background: #222;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+        }
+        .sidebar a:hover {
+            background: #444;
+        }
+        .inbox-container {
+            flex: 1;
+            margin: 20px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .email-header {
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .email-list {
+            list-style: none;
+            padding: 0;
+        }
+        .email-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            background-color: #e8f0fe;
+        }
+        .email-item:hover {
+            background-color: #d2e3fc;
+        }
+        .unread {
+            font-weight: bold;
+        }
+        .read {
+            color: #888;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="taskbar">
+        <div class="logo">THE COMPANY</div>
+        <div>Logged in as: The New Guy</div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#">📬 Inbox</a>
+            <a href="#">📨 Sent</a>
+            <a href="#">📂 Drafts</a>
+            <a href="#">🗑 Trash</a>
+            <a href="#">⚙ Settings</a>
+        </div>
+        <div class="inbox-container">
+            <div class="email-header">Inbox (2 unread)</div>
+            <ul class="email-list">
+                <li class="email-item unread">📩 [New] Urgent: System Update Required - Action Needed</li>
+                <li class="email-item unread">📩 [New] YOU WON A BRAND💰 NEW IPHONE 16 CLICK NOW💰💰</li>
+                <li class="email-item read">📨 Weekly Team Update - February 23</li>
+                <li class="email-item read">📨 IT Help Desk - Scheduled Maintenance Notice</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
