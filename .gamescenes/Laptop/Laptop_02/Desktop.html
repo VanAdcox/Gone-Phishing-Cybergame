@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Desktop Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://imgs.search.brave.com/VI-45kY9D9OLdNrJY0dNwZhoaTLoY9DLkmD5DWuf2Jc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/d2luZG93cy12aXN0/YS1oYWQtdGhlLW1v/c3QtYmVhdXRpZnVs/LWludGVyZmFjZS1v/Zi1hbGwtdjAtc2Rw/cTA5cjUxOXNiMS5w/bmc_d2lkdGg9MTI4/MCZmb3JtYXQ9cG5n/JmF1dG89d2VicCZz/PTU5ZjUzYzhmZmE3/ZTYzMjYxMjRlZmJm/MzJlMTg4MGEyMmY4/NWYyNjc') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            background: white;
+            width: 400px;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            position: relative;
+        }
+        .popup-header {
+            background: #0078D4;
+            color: white;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .popup-header .controls {
+            display: flex;
+        }
+        .popup-header .controls div {
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            text-align: center;
+            line-height: 16px;
+            font-size: 14px;
+            cursor: pointer;
+            background: white;
+            color: black;
+            border-radius: 2px;
+        }
+        .popup-header .controls div:hover {
+            background: lightgray;
+        }
+        .popup-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .popup input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .popup button {
+            padding: 10px 15px;
+            border: none;
+            background: #0078D4;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background: #005ea6;
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <div class="popup-header">
+            IT Security Alert
+            <div class="controls">
+                <div>—</div>
+                <div>□</div>
+                <div>✖</div>
+            </div>
+        </div>
+        <div class="popup-content">
+            <p>You need to set a new password. Your password must:</p>
+            <ul style="text-align: left;">
+                <li>Be at least 8 characters long</li>
+                <li>Contain at least one uppercase letter</li>
+                <li>Contain at least one number</li>
+                <li>Contain at least one special character (!@#$%^&*)</li>
+            </ul>
+            <input type="password" id="password" placeholder="Enter new password">
+            <button onclick="checkPassword()">Submit</button>
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+            
+            if (regex.test(password)) {
+                message.style.color = 'green';
+                message.textContent = 'Goodjob! You can continue with your day now!';
+            } else {
+                message.style.color = 'red';
+                message.textContent = 'Password does not meet requirements!';
+            }
+        }
+        function closePopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
