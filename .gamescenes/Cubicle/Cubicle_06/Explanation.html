@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WARNING: Malware Detected</title>
+    <style>
+        body {
+            background-color: black;
+            color: #0f0;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        .glitch {
+            font-size: 22px;
+            text-shadow: 2px 2px 5px red, -2px -2px 5px blue;
+            animation: glitch 0.1s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: skew(-5deg); }
+            100% { transform: skew(5deg); }
+        }
+        .warning-box {
+            border: 2px dashed red;
+            padding: 20px;
+            display: inline-block;
+            background: rgba(255, 0, 0, 0.1);
+            box-shadow: 0 0 10px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="warning-box">
+        <h1 class="glitch">!! WARNING: Social Engineering !!</h1>
+        <p>Social Engineering: the manipulation technique that exploits human error to gain private information, access, or valuables.</p>
+        <p>People like the one who called you ask these kids of questions over the phone to gain information about you or the place you work in hopes that they can exploit that information.</p>
+        <p>It's best practice to not answer personal or security related questions to someone you don't trust.</p>
+    </div>
+</body>
+</html>
